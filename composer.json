@@ -1,0 +1,13 @@
+{
+    "name": "paysera/notification-php-client",
+    "description": "Notification API PHP client",
+    "authors": [
+        {
+            "name": "paysera.com",
+            "homepage": "http://www.paysera.com"
+        }
+    ],
+    "autoload": {
+        "psr-0": { "Evp_Notification_": "src/" }
+    }
+}
