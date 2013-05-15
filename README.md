@@ -7,6 +7,8 @@ from webtopay.com about funds in your account. You have to set-up notifications 
 webtopay.com to get the notifications.
 
 ##Installation
+
+###Cloning
 * Use `git clone https://github.com/evp/NotificationPhpClient.git` to copy the NotificationPhpClient directory to your
 project directory.
 * Add the following code to your PHP file where you intend to check notification callbacks:
@@ -18,6 +20,11 @@ project directory.
 
 This will ensure that all of the library's classes are properly loaded.
 Make sure you change the 'path/to' to the actual path of the NotificationPhpClient.
+
+###Composer
+
+* Add `"paysera/notification-php-client": "dev-master"` dependency to composer.json file.
+* Execute `composer install` in your project directory.
 
 ##Using the library
 
