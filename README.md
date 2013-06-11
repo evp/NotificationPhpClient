@@ -8,7 +8,7 @@ webtopay.com to get the notifications.
 
 ##Installation
 
-###Cloning
+###Manual
 * Use `git clone https://github.com/evp/NotificationPhpClient.git` to copy the NotificationPhpClient directory to your
 project directory.
 * Add the following code to your PHP file where you intend to check notification callbacks:
@@ -24,7 +24,7 @@ Make sure you change the 'path/to' to the actual path of the NotificationPhpClie
 ###Composer
 
 * Add `"paysera/notification-php-client": "dev-master"` dependency to composer.json file.
-* Execute `composer install` in your project directory.
+* Execute `composer update paysera/notification-php-client` in your project directory.
 
 ##Using the library
 
