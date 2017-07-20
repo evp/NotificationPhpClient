@@ -111,6 +111,11 @@ class Evp_Notification_Entity_OperationNotification
     protected $transferId;
 
     /**
+     * @var int
+     */
+    private $statementId;
+
+    /**
      * Gets account
      *
      * @param string $account
@@ -583,6 +588,26 @@ class Evp_Notification_Entity_OperationNotification
     }
 
     /**
+     * @param int $statementId
+     *
+     * @return $this
+     */
+    public function setStatementId($statementId)
+    {
+        $this->statementId = $statementId;
+
+        return $this;
+    }
+
+    /**
+     * @return int
+     */
+    public function getStatementId()
+    {
+        return $this->statementId;
+    }
+
+    /**
      * Creates instance from array of parameters
      *
      * @param array $params
@@ -613,6 +638,7 @@ class Evp_Notification_Entity_OperationNotification
             ->setReferenceNumber(isset($params['reference_number']) ? $params['reference_number'] : null)
             ->setReferenceToBeneficiary(isset($params['reference_to_beneficiary']) ? $params['reference_to_beneficiary'] : null)
             ->setReferenceToPayer(isset($params['reference_to_payer']) ? $params['reference_to_payer'] : null)
+            ->setStatementId(isset($params['statement_id']) ? $params['statement_id'] : null)
         ;
         return $notification;
     }
