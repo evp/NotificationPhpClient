@@ -116,6 +116,12 @@ class Evp_Notification_Entity_OperationNotification
     private $statementId;
 
     /**
+     * @var int
+     */
+    protected $createdAt;
+
+
+    /**
      * Gets account
      *
      * @param string $account
@@ -608,6 +614,22 @@ class Evp_Notification_Entity_OperationNotification
     }
 
     /**
+     * @param int $createdAt
+     */
+    public function setCreatedAt($createdAt)
+    {
+        $this->createdAt = $createdAt;
+    }
+
+    /**
+     * @return int
+     */
+    public function getCreatedAt()
+    {
+        return $this->createdAt;
+    }
+
+    /**
      * Creates instance from array of parameters
      *
      * @param array $params
@@ -639,6 +661,7 @@ class Evp_Notification_Entity_OperationNotification
             ->setReferenceToBeneficiary(isset($params['reference_to_beneficiary']) ? $params['reference_to_beneficiary'] : null)
             ->setReferenceToPayer(isset($params['reference_to_payer']) ? $params['reference_to_payer'] : null)
             ->setStatementId(isset($params['statement_id']) ? $params['statement_id'] : null)
+            ->setCreatedAt(isset($params['created_at']) ? $params['created_at'] : null)
         ;
         return $notification;
     }
