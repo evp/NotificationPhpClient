@@ -116,7 +116,7 @@ class Evp_Notification_Entity_OperationNotification
     private $statementId;
 
     /**
-     * @var int
+     * @var \DateTime
      */
     protected $createdAt;
 
@@ -614,15 +614,19 @@ class Evp_Notification_Entity_OperationNotification
     }
 
     /**
-     * @param int $createdAt
+     * @param \DateTime $createdAt
+     *
+     * @return $this
      */
     public function setCreatedAt($createdAt)
     {
         $this->createdAt = $createdAt;
+        
+        return $this;
     }
 
     /**
-     * @return int
+     * @return \DateTime
      */
     public function getCreatedAt()
     {
@@ -661,7 +665,7 @@ class Evp_Notification_Entity_OperationNotification
             ->setReferenceToBeneficiary(isset($params['reference_to_beneficiary']) ? $params['reference_to_beneficiary'] : null)
             ->setReferenceToPayer(isset($params['reference_to_payer']) ? $params['reference_to_payer'] : null)
             ->setStatementId(isset($params['statement_id']) ? $params['statement_id'] : null)
-            ->setCreatedAt(isset($params['created_at']) ? $params['created_at'] : null)
+            ->setCreatedAt(isset($params['created_at']) ? (new \DateTime())->setTimestamp($params['created_at']) : null)
         ;
         return $notification;
     }
