@@ -1,14 +1,14 @@
-#NotificationPhpClient
+# NotificationPhpClient
 
-##What is NotificationPhpClient?
+## What is NotificationPhpClient?
 
 This is a library for [webtopay.com Notification API][1]. It allows you to easily check sign and parse the callback request
 from webtopay.com about funds in your account. You have to set-up notifications in "Account settings" page on
 webtopay.com to get the notifications.
 
-##Installation
+## Installation
 
-###Manual
+### Manual
 * Use `git clone https://github.com/evp/NotificationPhpClient.git` to copy the NotificationPhpClient directory to your
 project directory.
 * Add the following code to your PHP file where you intend to check notification callbacks:
@@ -21,12 +21,12 @@ project directory.
 This will ensure that all of the library's classes are properly loaded.
 Make sure you change the 'path/to' to the actual path of the NotificationPhpClient.
 
-###Composer
+### Composer
 
 * Add `"paysera/notification-php-client": "dev-master"` dependency to composer.json file.
 * Execute `composer update paysera/notification-php-client` in your project directory.
 
-##Using the library
+## Using the library
 
 ```php
 $notification = Evp_Notification_Container::create()->getRequestParser()->parseRequest($_POST);
@@ -75,7 +75,7 @@ try {
 ```
 
 
-##Running tests
+## Running tests
 
 Run `phpunit` in the base directory.
 
