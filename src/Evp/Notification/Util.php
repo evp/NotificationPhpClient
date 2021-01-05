@@ -43,10 +43,18 @@ class Evp_Notification_Util
     {
         $params = array();
         parse_str($query, $params);
-        if (get_magic_quotes_gpc()) {
+        if ($this->checkMagicQuotesOption()) {
             $params = $this->stripSlashesRecursively($params);
         }
         return $params;
+    }
+
+    private function checkMagicQuotesOption() {
+        if (version_compare(PHP_VERSION, '5.4.0') >= 0) {
+            return false;
+        } else {
+            return get_magic_quotes_gpc();
+        }
     }
 
     /**
